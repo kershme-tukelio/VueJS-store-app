@@ -21,7 +21,8 @@ const routes = [
   {
     path: '/customers/:id',
     name: 'LatestPurchases',
-    component: LatestPurchases
+    component: LatestPurchases,
+    props: true
   }
 ]
 

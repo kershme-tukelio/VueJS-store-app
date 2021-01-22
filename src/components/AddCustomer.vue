@@ -12,7 +12,7 @@
             <label for="email" class="form-label">Email: </label>
             <input required v-model="formData.email" type="email" class="form-control" id="email">
         </div>
-        <button type="submit"></button>
+        <button type="submit"> Add customer </button>
     </form>
 </template>
 

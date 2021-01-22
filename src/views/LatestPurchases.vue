@@ -7,7 +7,7 @@ export default {
     name: "LatestPurchases",
     props: ['customer'],
     mounted() {
-        
+        console.log(this.customer.firstName);
     }
 }
 </script>
