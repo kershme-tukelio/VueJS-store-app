@@ -15,6 +15,9 @@
 					<td>
 						<input type="number" min="0" v-model="product.quantity">
 					</td>
+					<td>
+						<router-link :to="{ name: `Buy`, params: {product, customers}}" >Purchase </router-link>
+					</td>
 				</tr>
 			</tbody>
 		</table>
