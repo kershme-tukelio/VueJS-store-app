@@ -9,7 +9,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for="product in products" :key="product.id" >
+				<tr v-for="product in getProducts" :key="product.id" >
 					<td>{{product.id}}</td>
 					<td>{{product.title}}</td>
 					<td>
@@ -18,13 +18,27 @@
 				</tr>
 			</tbody>
 		</table>
+		<label for="search"> Search:  </label>
+		<input type="text" v-model="searchValue">
 	</div>
 </template>
 
 <script>
 export default {
+	watch: {
+		searchValue: function(newValue) {
+			this.filteredProducts = this.products.filter(({title}) => title.toLowerCase().includes(newValue.toLowerCase()));
+		}
+	},
+	computed: {
+		getProducts() {
+			return this.searchValue ? this.filteredProducts : this.products;
+		}
+	},
 	data() {
 		return {
+			searchValue: "",
+			filteredProducts: [],
 			products: [
 				{
 					id: 1,
